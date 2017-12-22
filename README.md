@@ -36,7 +36,7 @@ The same two files with part 1
 The pairwise feature file from part 1.
 
 #### 3, -o <outputFile>
-OutputFile will contain Accuracy,Precision,Recall,F-measure for different thresholds of probability(being the matched pairs). Thresholds are from 0.0 to 1.0(0.1 as unit of measurement). Besides,the distribution of thresholds of probability in the output file will follow the distribution of thresholds of probability in predictions.
+OutputFile will contain Accuracy,Precision,Recall,F-measure for different thresholds of probability(being the matched pairs). Thresholds are from 0.0 to 1.0(0.1 as unit of measurement). Besides,the distribution of thresholds in the output file will follow the distribution of probabilities in predictions.
 
 #### 4,-f <featureSelectionModel>
 featureSelectionModel Option: Complete, Random, VarianceThreshold,SelectKBestFeatures,SelectFromModel_LassoCV. If none, Complete will be used.
