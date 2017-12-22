@@ -46,8 +46,8 @@ clusterModel Option: LogisticRegressionCV, RandomForest. If none, RandomForest m
 
 
 ## Requirements
-1,numpy
+1,numpy(>= 1.13.3)
 
-2,sklearn
+2,sklearn(>= 0.19.1)
 
-3,nltk
+3,nltk(>= 3.2.5)
