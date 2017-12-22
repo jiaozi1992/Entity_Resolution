@@ -1,0 +1,18 @@
+id,class,name,authors,venue,year
+0,309852,Semantic Integration of Environmental Models for Application to Global Information Systems and Decision-Making,D. Scott Mackay,SIGMOD Record,1999
+1,673321,Estimation of Query-Result Distribution and its Application in Parallel-Join Load Balancing,"Viswanath Poosala, Yannis E. Ioannidis",VLDB,1996
+3,673484,Cost-based Selection of Path Expression Processing Algorithms in Object-Oriented Databases,"Zhao-Hui Tang, Georges Gardarin, Jean-Robert Gruser",VLDB,1996
+4,673135,Benchmarking Spatial Join Operations with Spatial Output,"Erik G. Hoel, Hanan Samet",VLDB,1995
+5,304219,Efficient Geometry-based Similarity Search of 3D Spatial Databases,Daniel A. Keim,SIGMOD Conference,1999
+6,565131,Mining the World Wide Web: An Information Search Approach - Book Review,Aris M. Ouksel,SIGMOD Record,2002
+7,765531,Enhanced Abstract Data Types in Object-Relational Databases,Praveen Seshadri,VLDB J.,1998
+8,262769,Report on DART '96: Databases: Active and Real-Time (Concepts meet Practice),"Nandit Soparkar, Krithi Ramamritham",SIGMOD Record,1997
+9,234902,UniSQL's Next-Generation Object-Relational Database Management System,"Phil Janus, Albert D'Andrea",SIGMOD Record,1996
+11,872855,Aurora: A Data Stream Management System,"Nesime Tatbul, Daniel J. Abadi, C. Erwin, Anurag Maskey, Mitch Cherniack, Alex Rasin, Christian Convey, A. Singer, Eduardo F. Galvez, R. Yan, Ugur _etintemel, Ying Xing, Stanley B. Zdonik, Michael Stonebraker, Donald Carney, M. Hatoun",SIGMOD Conference,2003
+12,765752,Priority Assignment in Real-Time Active Databases,"Rajendran M. Sivasankaran, Bhaskar Purimetla, John A. Stankovic, Krithi Ramamritham, Donald F. Towsley",VLDB J.,1996
+13,764221,WaveCluster: A Wavelet Based Clustering Approach for Spatial Data in Very Large Databases,"Surojit Chatterjee, Gholamhosein Sheikholeslami, Aidong Zhang",VLDB J.,2000
+14,767145,Approximate query mapping: Accounting for translation closeness,"Hector Garcia-Molina, Kevin Chen-Chuan Chang",VLDB J.,2001
+15,673491,SPRINT: A Scalable Parallel Classifier for Data Mining,"John C. Shafer, Rakesh Agrawal, Manish Mehta",VLDB,1996
+16,375774,Snowball: A Prototype System for Extracting Relations from Large Text Collections,"Jeff Pavel, Luis Gravano, Aleksandr Voskoboynik, Eugene Agichtein, Viktoriya Sokolova",SIGMOD Conference,2001
+17,253304,A Framework for Implementing Hypothetical Queries,"Timothy Griffin, Richard Hull",SIGMOD Conference,1997
+18,765552,Parametric Query Optimization,"Raymond T. Ng, Timos K. Sellis, Yannis E. Ioannidis, Kyuseok Shim",VLDB J.,1997
