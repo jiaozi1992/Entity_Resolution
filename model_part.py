@@ -234,6 +234,9 @@ if __name__ == "__main__":
 
     if feature == "Random":
         featureForColumn = int(raw_input("How Many features do you want for each column(If exceed the total number of features for a column, the total number of features for the column will be used): "))
+        if featureForColumn <= 0:
+            print "Features do you want for each column must be more than 0"
+            sys.exit()
         ranges = []
         pre = field_names_list[1].split("-")[1]
         f = True
