@@ -14,11 +14,8 @@ from myComparison import PosQGram
 from myComparison import OntoLCS
 from myComparison import SWDist
 from myComparison import ContainsString
-# from myComparison import EncodeString
 from myComparison import TruncateString
-# from myComparison import SyllAlDist
 from myComparison import NumericAbs
-from myComparison import NumericPerc
 from myComparison import NumericPerc
 from myComparison import winkler
 from nltk import ngrams

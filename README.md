@@ -57,7 +57,7 @@ The input files should fulfil the requirements of the part1 in Usage1. Part of t
 Full Command List
 The full list of command line options is available with $ python myCalSim.py -h
 
-### Part 2, predict the cluster with part of the file label.
+### Part 2, predict the cluster with part of the file labeled.
 Example Usage
 $ python predict.py ./dataset/test3.csv ./dataset/test4.csv ./test -a ./tst1 -b ./tst2 -f Complete -m RandomForest
 
