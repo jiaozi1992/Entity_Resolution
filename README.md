@@ -73,7 +73,7 @@ The pairwise feature file from part 1.
 #### 3, -a ./tst1 -b ./tst2
 The output predicted file for test3.csv and test4.csv. Matched items will have the same cluster name.
 
-#### 4, -f Complete
+#### 4, -f
 featureSelectionModel Option: Complete, Random, VarianceThreshold,SelectKBestFeatures,SelectFromModel_LassoCV. If none, Complete will be used.
 
 #### 5, -m <clusterModel>
