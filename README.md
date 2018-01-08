@@ -1,8 +1,8 @@
 # Entity_Resolution
 
-Entity_Resolution compares different feature selection methods and clustering models in entity linking problem.
+Entity_Resolution compares different feature selection methods and clustering models in entity linking problem and provides prediction for matched items from two files.
 
-## Usage
+## Usage1: compares different feature selection methods and clustering models in entity linking problem
 
 ### Part 1, generate the pairwise features file.
 Example Usage
@@ -39,6 +39,41 @@ The pairwise feature file from part 1.
 OutputFile will contain Accuracy,Precision,Recall,F-measure for different thresholds of probability(being the matched pairs). Thresholds are from 0.0 to 1.0(0.1 as unit of measurement). Besides,the distribution of thresholds in the output file will follow the distribution of probabilities in predictions.
 
 #### 4,-f <featureSelectionModel>
+featureSelectionModel Option: Complete, Random, VarianceThreshold,SelectKBestFeatures,SelectFromModel_LassoCV. If none, Complete will be used.
+
+#### 5, -m <clusterModel>
+clusterModel Option: LogisticRegressionCV, RandomForest. If none, RandomForest model will be used.
+
+
+## Usage2: Predict items cluster in two files(Matched items will have the same cluster name).
+
+### Part 1, generate the pairwise features file.
+Example Usage
+
+$ python myCalSim.py ./dataset/test3.csv ./dataset/test4.csv -o ./test -f name
+#### 1,./dataset/test3.csv ./dataset/test4.csv
+The input files should fulfil the requirements of the part1 in Usage1. Part of the items should be labeled with cluster name whatever you like and matched rows should have the same cluster name. 'class' column of unlabeled rows should be blank.
+
+Full Command List
+The full list of command line options is available with $ python myCalSim.py -h
+
+### Part 2, predict the cluster with part of the file label.
+Example Usage
+$ python predict.py ./dataset/test3.csv ./dataset/test4.csv ./test -a ./tst1 -b ./tst2 -f Complete -m RandomForest
+
+Full Command List
+The full list of command line options is available with $ python model_part.py -h
+
+#### 1, ./dataset/test1.csv ./dataset/test2.csv
+The same two files with part 1. The schema of the two files must fulfill the requirements in part1.
+
+#### 2, ./test
+The pairwise feature file from part 1.
+
+#### 3, -a ./tst1 -b ./tst2
+The output predicted file for test1.csv and test2.csv.
+
+#### 4, -f Complete
 featureSelectionModel Option: Complete, Random, VarianceThreshold,SelectKBestFeatures,SelectFromModel_LassoCV. If none, Complete will be used.
 
 #### 5, -m <clusterModel>

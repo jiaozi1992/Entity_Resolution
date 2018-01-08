@@ -1,0 +1,21 @@
+id,class,name,authors,venue,year
+3709,673321,Estimation of Query-Result Distribution and its Application in Parallel-Join Load Balancing,"Viswanath Poosala, Yannis E. Ioannidis",Very Large Data Bases,1996
+3741,673484,Cost-based Selection of Path Expression Processing Algorithms in Object-Oriented Databases,"Georges Gardarin, Jean-Robert Gruser, Zhao-Hui Tang",Very Large Data Bases,1996
+3748,aaa,SPRINT: A Scalable Parallel Classifier for Data Mining,"John C. Shafer, Rakesh Agrawal, Manish Mehta",Very Large Data Bases,1996
+3780,,Parametric query optimization,"Yannis E. Ioannidis, Raymond T. Ng, Kyuseok Shim, Timos K. Sellis",The VLDB Journal &mdash; The International Journal on Very Large Data Bases ,1997
+3795,765531,Enhanced abstract data types in object-relational databases,Praveen Seshadri,The VLDB Journal &mdash; The International Journal on Very Large Data Bases ,1998
+3829,,Priority assignment in real-time active databases,"Rajendran M. Sivasankaran, John A. Stankovic, Don Towsley, Bhaskar Purimetla, Krithi Ramamritham",The VLDB Journal &mdash; The International Journal on Very Large Data Bases ,1996
+3839,ddd,WaveCluster: a wavelet-based clustering approach for spatial data in very large databases,"Gholamhosein Sheikholeslami, Surojit Chatterjee, Aidong Zhang",The VLDB Journal &mdash; The International Journal on Very Large Data Bases ,2000
+4375,262769,Report on DART '96: databases: active and real-time (concepts meet practice),"Krithi Ramamritham, Nandit Soparkar",ACM SIGMOD Record ,1997
+4424,,A framework for implementing hypothetical queries,"Timothy Griffin, Richard Hull",International Conference on Management of Data,1997
+4501,234902,UniSQL's next-generation object-relational database management system,"Albert D'Andrea, Phil Janus",ACM SIGMOD Record ,1996
+4626,,Aurora: a data stream management system,"D. Abadi, D. Carney, U. &#199;etintemel, M. Cherniack, C. Convey, C. Erwin, E. Galvez, M. Hatoun, A. Maskey, A. Rasin, A. Singer, M. Stonebraker, N. Tatbul, Y. Xing, R. Yan, S. Zdonik",International Conference on Management of Data,2003
+4722,,Approximate query mapping: Accounting for translation closeness,"Kevin Chen-Chuan Chang, H&#233;ctor Garc&#237;a-Molina",The VLDB Journal &mdash; The International Journal on Very Large Data Bases ,2001
+4894,,Standards for databases on the grid,"Susan Malaika, Andrew Eisenberg, Jim Melton",ACM SIGMOD Record ,2003
+4895,,Supporting Exceptions to Schema Consistency to Ease Schema Evolution in OODBMS,"Eric Amiel, Marie-Jo Bellosta, Eric Dujardin, Eric Simon",Very Large Data Bases,1994
+4896,,DBGlobe: a service-oriented P2P system for global computing,"Evaggelia Pitoura, Serge Abiteboul, Dieter Pfoser, George Samaras, Michalis Vazirgiannis",ACM SIGMOD Record ,2003
+4897,,Indexing Multiple Sets,"Christoph Kilger, Guido Moerkotte",Very Large Data Bases,1994
+4898,,Selective information dissemination in P2P networks: problems and solutions,"Manolis Koubarakis, Christos Tryfonopoulos, Stratos Idreos, Yannis Drougas",ACM SIGMOD Record ,2003
+4899,,A Low-Cost Storage Server for Movie on Demand Databases,"Banu &#214;zden, Alexandros Biliris, Rajeev Rastogi, Abraham Silberschatz",Very Large Data Bases,1994
+4900,,In-context peer-to-peer information filtering on the Web,Aris M. Ouksel,ACM SIGMOD Record ,2003
+4865,,An Empirical Performance Study of the Ingres Search Accelerator for a Large Property Management Database System,"Sarabjot S. Anand, David A. Bell, John G. Hughes",Very Large Data Bases,1994

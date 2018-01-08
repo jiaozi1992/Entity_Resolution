@@ -298,13 +298,14 @@ start = timeit.default_timer()
 cnt = 0
 pairs_completed = 0
 
+# no class, -1
 with open(f3_name,"w") as f:
     f.write(",".join(header))
     f.write("\n")
     for p in pairs2:
         if cnt % (int(len(pairs2)/10.0)) == 0:
             now = timeit.default_timer()
-            print "it takes",round((now - start)/60.0,2),"minutes to complete pairwise feature generation for ", round(cnt/(len(pairs2)/10.0),0)*10,"% of all pairs"
+            print "It takes",round((now - start)/60.0,2),"minutes to complete pairwise feature generation for ", round(cnt/(len(pairs2)/10.0),0)*10,"% of all pairs"
         aindex = p[0]
         bindex = p[1]
         cur = []
@@ -312,7 +313,10 @@ with open(f3_name,"w") as f:
         bl = bsim[bindex]
         cur.append(str(al[0]))
         cur.append(str(bl[0]))
-        cur.append(str(exact(al[1],bl[1])))
+        if len(al[1]) == 0 or len(bl[1]) == 0:
+            cur.append("-1.0")
+        else:
+            cur.append(str(exact(al[1],bl[1])))
         for attr_index in range(2,len(header_list)):
             if attr_index in numericalFeatureList:
                 for sf2 in num_fun:
@@ -339,4 +343,3 @@ with open(f3_name,"w") as f:
         cnt += 1
         f.write(",".join(cur))
         f.write("\n")
-

@@ -88,6 +88,7 @@ if __name__ == "__main__":
         sys.exit(2)
 
     try:
+        output = output + '.csv'
         open(output,"w")
     except IOError:
         print "Could Not Open Output File"
@@ -180,12 +181,13 @@ if __name__ == "__main__":
     ids = []
 
     for (rec_id_tuple, w_vec) in class_w_vec_dict.iteritems():
-        data.append(w_vec)
-        ids.append(rec_id_tuple)
-        if (rec_id_tuple in tm_set):
-            labels.append(1.0)  # Match class
-        else:
-            labels.append(-1.0)  # Non-match class
+        if w_vec[0] > -0.5:
+            data.append(w_vec)
+            ids.append(rec_id_tuple)
+            if (rec_id_tuple in tm_set):
+                labels.append(1.0)  # Match class
+            else:
+                labels.append(-1.0)  # Non-match class
 
     assert len(data) == len(tm_set) + len(tnm_set)
     assert len(data) == len(labels)
@@ -225,7 +227,13 @@ if __name__ == "__main__":
             cnt3 += 1
 
     random_num = randint(1, 1000000)
-    X_train2, X_test2, y_train2, y_test2 = train_test_split(data2_, labels2_, test_size=0.1, random_state=random_num)
+    train_size = raw_input("Enter The Percentage You Want to Use For Training Data (For example: 0.5 for this small dataset): ")
+    try:
+        train_size = float(train_size)
+    except:
+        print "Enter a Float Number for Training Data Percentage"
+        sys.exit()
+    X_train2, X_test2, y_train2, y_test2 = train_test_split(data2_, labels2_, test_size=1-train_size, random_state=random_num)
     print "Training Dataset Size: ",len(X_train2)
 
     if feature == "Complete":  # for diagram title
@@ -329,68 +337,60 @@ if __name__ == "__main__":
     threshold3 = sorted(list(threshold3))
     threshold3 = [i for i in threshold3 if i >= 0]
 
-    with open(output,"w") as f:
-        f.write("AUC of " + feature + " Precision-Recall curve: ")
-        f.write(str(average_precision))
-        f.write("\n")
-        f.write("\n")
-        for threshold in threshold3:
-            tp = 0
-            fp = 0
-            tn = 0
-            fn = 0
-            for i in range(0, len(all_predicted)):
-                if (all_predicted[i] >= threshold):  # Match prediction
-                    pred_match = True
-                    # print "all_predicted[i]",all_predicted[i]
+
+    csv_matrix = []
+    for threshold in threshold3:
+        tp = 0
+        fp = 0
+        tn = 0
+        fn = 0
+        for i in range(0, len(all_predicted)):
+            if (all_predicted[i] >= threshold):  # Match prediction
+                pred_match = True
+                # print "all_predicted[i]",all_predicted[i]
+            else:
+                pred_match = False
+
+            if (pred_match == True):
+                if (int(labels[i]) > 0):
+                    tp += 1
                 else:
-                    pred_match = False
+                    fp += 1
+            else:  # Non-match prediction
+                if (int(labels[i]) <= 0):
+                    tn += 1
+                else:
+                    fn += 1
 
-                if (pred_match == True):
-                    if (int(labels[i]) > 0):
-                        tp += 1
-                    else:
-                        fp += 1
-                else:  # Non-match prediction
-                    if (int(labels[i]) <= 0):
-                        tn += 1
-                    else:
-                        fn += 1
+        if tp + fp + tn + fn <= 0:
+            acc = 0
+        else:
+            acc = float(tp + tn) / (tp + fp + tn + fn)
 
-            if tp + fp + tn + fn <= 0:
-                acc = 0
-            else:
-                acc = float(tp + tn) / (tp + fp + tn + fn)
+        if tp + fp <= 0:
+            prec = 0
+        else:
+            prec = tp / float((tp + fp))
 
-            if tp + fp <= 0:
-                prec = 0
-            else:
-                prec = tp / float((tp + fp))
+        if tp + fn <= 0:
+            recall = 0
+        else:
+            recall = tp / float(all_tp)
+            # recall = min(1.0, tp / float(len(tm_set))
 
-            if tp + fn <= 0:
-                recall = 0
-            else:
-                recall = tp / float(all_tp)
-                # recall = min(1.0, tp / float(len(tm_set))
+        if prec + recall <= 0:
+            fm = 0
+        else:
+            fm = 2 * prec * recall / (prec + recall)
 
-            if prec + recall <= 0:
-                fm = 0
-            else:
-                fm = 2 * prec * recall / (prec + recall)
+        cur = [threshold,acc,recall,fm]
+        csv_matrix.append(cur)
 
-            f.write("Threshold: ")
-            f.write(str(threshold))
-            f.write("\n")
-            f.write("Accuracy: ")
-            f.write(str(acc))
-            f.write("\n")
-            f.write("Precision: ")
-            f.write(str(prec))
-            f.write("\n")
-            f.write("Recall: ")
-            f.write(str(recall))
-            f.write("\n")
-            f.write("F-measure: ")
-            f.write(str(fm))
-            f.write("\n")
-            f.write("\n")
+    with open(output, "w") as f1:
+        f1.write("Threshold,Accuracy,Precision,F-measure")
+        f1.write("\n")
+        for i in csv_matrix:
+            for j in i:
+                f1.write(str(j))
+                f1.write(",")
+            f1.write("\n")
