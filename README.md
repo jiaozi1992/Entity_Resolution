@@ -62,7 +62,7 @@ Example Usage
 $ python predict.py ./dataset/test3.csv ./dataset/test4.csv ./test -a ./tst1 -b ./tst2 -f Complete -m RandomForest
 
 Full Command List
-The full list of command line options is available with $ python model_part.py -h
+The full list of command line options is available with $ python predict.py -h
 
 #### 1, ./dataset/test3.csv ./dataset/test4.csv
 The same two files with part 1. The schema of the two files must fulfill the requirements in part1.
