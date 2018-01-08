@@ -64,14 +64,14 @@ $ python predict.py ./dataset/test3.csv ./dataset/test4.csv ./test -a ./tst1 -b 
 Full Command List
 The full list of command line options is available with $ python model_part.py -h
 
-#### 1, ./dataset/test1.csv ./dataset/test2.csv
+#### 1, ./dataset/test3.csv ./dataset/test4.csv
 The same two files with part 1. The schema of the two files must fulfill the requirements in part1.
 
 #### 2, ./test
 The pairwise feature file from part 1.
 
 #### 3, -a ./tst1 -b ./tst2
-The output predicted file for test1.csv and test2.csv.
+The output predicted file for test3.csv and test4.csv. Matched items will have the same cluster name.
 
 #### 4, -f Complete
 featureSelectionModel Option: Complete, Random, VarianceThreshold,SelectKBestFeatures,SelectFromModel_LassoCV. If none, Complete will be used.
